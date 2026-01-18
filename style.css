@@ -1,0 +1,551 @@
+:root {
+  /* === LIGHT MODE COLORS === */
+  --bg-color: #fdfcff;
+  --text-color: #1b1b1b;
+  --navbar-bg: #ffffff;
+  --footer-bg: #d9d2f0;
+
+  --card-bg: #ffffff;
+  --card-accent: #eee8fd; /* pastel lilac Y2K */
+  --btn-grid: #f1ecff;
+
+  --mdl-alert: #2a2a2a;
+  --text-mdl: #666;
+
+  --shadow-color: rgba(152, 127, 225, 0.18);
+}
+
+
+/* ================= DARK MODE (VARIABLE ONLY) ================= */
+body.dark-mode {
+  --bg-color: linear-gradient(180deg, #0f0f0f, #1c1c1c);
+  --text-color: #e5e5e5;
+  --navbar-bg: #121212;
+  --footer-bg: #141414;
+  --card-bg: #1f1f1f;
+  --card-accent: #dbdad9; /* card img + hero text */
+  --btn-grid: #a09788;
+  --modal-bg: #1a1a1a;
+  --mdl-alert: #e6e6e6;
+  --text-mdl: #aaaaaa;
+  --shadow-color: rgba(241, 241, 241, 0.6);
+}
+
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+  transition: background .4s, color .4s;
+  overflow-x: hidden;
+
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+/* ================= NAVBAR ================= */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 5%;
+  background: var(--navbar-bg);
+  box-shadow: 0 2px 8px var(--shadow-color);
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* Dark Mode Button */
+.dark-mode-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--text-color);
+  transition: transform .3s;
+}
+
+.dark-mode-toggle:hover {
+  transform: rotate(20deg) scale(1.1);
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  letter-spacing: 4px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 12px;
+  font-weight: 600;
+}
+.nav-link a:hover {
+  color: var(--link-hover);
+}
+/* DROPDOWN */
+.dropdown {
+  position: relative;
+}
+.dropbtn {
+  background: none;
+  border: none;
+  font: inherit;
+  color: var(--text-color);
+  font-weight: 500;
+  cursor: pointer;
+}
+.dropdown-content {
+  position: absolute;
+  background-color: var(--dropdown-bg);
+  min-width: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  top: 120%;
+  left: 0;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+.dropdown:hover .dropdown-content {
+  display: flex;
+}
+.dropdown-content a {
+  padding: 0.6rem 1rem;
+}
+
+/* ================= BURGER ================= */
+.burger {
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none; /* disembunyiin dulu untuk layar besar */
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.burger:hover {
+  color: var(--link-hover);
+}
+
+.burger div {
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  margin: 5px;
+  transition: .3s;
+}
+
+/* ================= CAROUSEL ================= */
+.carousel-container {
+  padding: 20px;
+}
+
+.carousel {
+  position: relative;
+  height: 500px;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.carousel::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(
+        to bottom,
+        rgba(33, 32, 32, 0),
+        #dbddfc
+    );
+    pointer-events: none;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: .8s;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 50px;
+  left: 40px;
+  color: white;
+  font-family: 'Playfair Display', serif; 
+  font-size: 32px; 
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* ================= ABOUT ================= */
+.py-lorem {
+  padding: 80px 0;
+  background: var(--bg-color);
+}
+
+.subheading {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.lorem {
+  max-width: 800px;
+  margin: auto;
+  font-size: 14px;
+  line-height: 1.8;
+  opacity: .85;
+}
+
+/* ================= CARD FLEX ================= */
+.flex-cards {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 0;
+  background: var(--bg-light);
+}
+
+.card {
+  background: var(--card-accent);
+  box-shadow: 0 8px 20px var(--shadow-color);
+  width: 280px;
+  color: #3e2525;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 15px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px var(--shadow-color);
+}
+
+.img-box {
+  height: 220px;
+  background: var(--card-accent);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.img-box img {
+  transform: scale(1.08);
+}
+
+/* ================= LOGIN SECTION ================= */
+.section-login {
+  padding: 40px 0;
+  background: var(--bg-color);
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: 40px auto;
+  background: var(--bg-color);
+  color: #1a1a1a;
+  font-weight: 600;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+button{
+  transition: transform .3s ease, box-shadow .3s ease;
+  background: var(--bg-color);
+}
+
+.button-grid button:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 25px var(--shadow-color);
+}
+
+.btn-lorem {
+  padding: 15px;
+  border-radius: 30px;
+  background: var(--btn-grid);
+  border: none;
+  cursor: pointer;
+}
+
+
+
+.hero-text {
+    background: var(--card-accent);
+    padding: 8px ;
+    border-radius: 8px;
+    position: relative;
+    text-align: center; 
+    color: #3e2525;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.hero-text:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px var(--shadow-color);
+}
+
+
+
+/* ================= COMMENT ================= */
+.comment {
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.testimonial-section {
+  padding: 30px 40px;
+  background: var(--bg-color);
+}
+
+.testimonial-section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.testimonial-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.testimonial-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background: var(--btn-grid);
+  color: #6a5151;
+  border-radius: 12px;
+  transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.testimonial-card img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 30px var(--shadow-color);
+}
+
+.text {
+  width: 100%;
+}
+
+.line.short {
+  width: 60%;
+}
+
+.avatar {
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+/* ================= MODAL ================= */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: var();
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  max-width: 350px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  animation: fadeIn 0.4s ease forwards;
+  color: var(--mdl-alert);
+}
+
+.modal-content img {
+  max-width: 100%;
+  align-items: center;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-top: 8px;
+}
+.modal-content audio {
+  width: 80%;
+  margin-top: 10px;
+}
+.modal-content p {
+  font-size: 0.95rem;
+  color: var(--text-mdl);
+  margin-top: 8px;
+}
+
+#tutup-popup {
+  position: absolute;
+  top: 8px;
+  right: 15px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--text-mdl);
+  cursor: pointer;
+  transition: color 0.3s;
+  z-index: 1000;
+}
+#tutup-popup:hover {
+  color: #3ec5ff;
+}
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+
+/* ================= FOOTER ================= */
+.footer {
+  background: var(--footer-bg);
+  text-align: center;
+  padding: 12px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .nav-links {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100vh;
+    width: 70%;
+    background: var(--navbar-bg);
+    flex-direction: column;
+    justify-content: center;
+    transition: .4s;
+  }
+
+  .nav-links.nav-active {
+    right: 0;
+  }
+
+  .burger {
+    display: block;
+    margin-left: 10px;
+  }
+
+  .carousel {
+    height: 300px;
+    align-items: center;      /* CENTER FLEX */
+    justify-content: center;
+  }
+
+  .testimonial-container {
+    grid-template-columns: 1fr;
+  }
+
+  .button-grid {
+    grid-template-columns: 1fr;
+  }
+
+/* FIX TOTAL ABOUT SECTION */
+  .section-about {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+    .section-about .flex-cards {
+    display: flex;
+        flex-direction: column;
+        align-items: center;      /* CENTER FLEX */
+        justify-content: center;
+        padding: 2rem 1rem;
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .section-about .card {
+        flex: none !important;    /* MATIIN flex:1 */
+        width: 100%;
+        max-width: 320px;
+        margin: 0 auto;           /* CENTER PALING AMAN */
+    }
+
+    .section-about .img-box {
+        width: 100%;
+        height: 200px;
+        display: block;
+        margin: 0 auto;
+    }
+    
+}

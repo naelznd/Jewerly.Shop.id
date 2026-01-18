@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUXE</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ================= HEADER / NAVBAR ================= -->
+ <header class="navbar">
+        <div class="logo">LUXE JEWERLY</div>
+
+        <nav class="nav-links" id="navLinks">
+            <button id="themeToggle" class="theme-toggle" aria-label="Tombol Dark and Light">🌙</button>
+            <a href="#home">HOME</a>
+            <a href="#about">ABOUT</a>
+                <div class="dropdown">
+                <button class="dropbtn" aria-expanded="false" aria-controls="about-menu">LOGIN</button>
+                <div class="dropdown-content" id="about-menu">
+                     <a href="#katalog">KATALOG</a></li>
+                     <a href="#masuk">SIGN IN</a></li>
+                </div>
+            </div>
+            <a href="#comment">COMMENT</a>
+        </nav>
+        <button class="burger" id="burgerBtn" aria-label="Tombol Menu Mobile">☰</button>
+    </header>
+
+
+<!-- ================= HOME / CAROUSEL ================= -->
+<section id="home" class="section-home">
+  <div class="carousel-container">
+
+    <div class="carousel">
+      <div class="slide active">
+        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=2070" alt="Jewelry Necklace">
+        <div class="carousel-caption">Elegant Necklaces</div>
+      </div>
+
+      <div class="slide">
+        <img src="https://i.pinimg.com/1200x/b5/ca/32/b5ca32fec410f7105e6950d023243ce6.jpg" alt="Watch Bracelet">
+        <div class="carousel-caption">Combination Watch & Bracelet</div>
+      </div>
+
+      <div class="slide">
+        <img src="https://i.pinimg.com/1200x/cf/74/a6/cf74a6e24073497dff03fe8c6f879f25.jpg" alt="Rings">
+        <div class="carousel-caption">Exclusive Rings Collection</div>
+      </div>
+
+      <div class="slide">
+        <img src="https://i.pinimg.com/736x/0b/d5/80/0bd580d8439e58008732697d7913bdf3.jpg" alt="Keychain">
+        <div class="carousel-caption">Handmade Keychains</div>
+      </div>
+    </div>
+
+    <div class="carousel-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+
+    <div class="section-header text-center">
+      <h2 class="subheading">Crafted for everyday stories</h2>
+      <p class="lorem">
+        Jewelry is more than an accessory—it’s a form of expression.
+        Our pieces are inspired by natural elements, modern trends, and the small moments that shape your everyday look.
+        Using beads, stones, and thoughtfully selected materials, we create jewelry that feels light, versatile, and personal.
+        Designed to be worn comfortably every day, each piece adapts to your style and becomes part of your story.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+<section id="about" class="section-about">
+  <div class="container">
+    <div class="flex-cards">
+      <div class="card">
+        <img src="https://i.pinimg.com/1200x/62/5d/45/625d4529442c930519b09f215e61bf0a.jpg" alt="Jewelry 1" class="img-box">
+        <h3>Clean & Artsy</h3>
+        <p>A star-themed denim bag made from recycled fabrics, designed to be unique, expressive, and sustainably crafted.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/1c/16/0b/1c160bad9feb83ffefbb45dac133a989.jpg" alt="Jewelry 2" class="img-box">
+        <h3>Short & Sweet</h3>
+        <p>Y2K-style keychains and wallets with cute details, made to brighten up your everyday accessories.</p>
+      </div>
+
+      <div class="card">
+        <img src="https://i.pinimg.com/736x/bc/09/05/bc09057bb0658be1709a352ed72ebb29.jpg" alt="Jewelry 3" class="img-box">
+        <h3>Modern & Playful</h3>
+        <p>Inspired by Y2K aesthetics and contemporary styles for a fresh look.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= LOGIN ================= -->
+<section id="login" class="section-login">
+  <div class="container text-center">
+
+    <div class="section-header">
+      <h2 class="subheading">Discover pieces that fit your vibe</h2>
+      <p class="lorem">
+        Join us and step into a space where creativity meets identity.
+        Logging in allows you to connect with our brand, explore exclusive designs, and experience personalized features created especially for you.
+        Let this be the beginning of a more meaningful journey with us.
+      </p>
+    </div>
+
+    <div id="katalog" class="button-grid">
+      <button class="btn-lorem">Explore Collection</button>
+      <button class="btn-lorem">See New Arrivals</button>
+      <button class="btn-lorem">Start Your Journey</button>
+      <button class="btn-lorem">View Catalog</button>
+    </div>
+
+    <div id="masuk" class="hero-text">
+      <h2>Get to know our world</h2>
+      <p class="lorem">
+       Step into a collection where jewelry feels personal, expressive, and effortlessly stylish. Discover pieces designed to move with you, wherever your day takes you.
+      </p>
+      <button id="spotifyBtn">Explore More</button>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================= COMMENT ================= -->
+<section id="comment" class="testimonial-section">
+  <div class="container">
+
+    <h2 class="text-center">Loved by those who wear it</h2>
+
+    <div class="testimonial-container">
+      <div class="testimonial-card">
+        <img src="https://i.pinimg.com/736x/d5/16/e2/d516e2cd9b1d363a08a69e708c8d937c.jpg" alt="user">
+        <div class="text">
+          <h3>Ryul rawrr~</h3>
+          <p>Kk yg ada Mw kudanya apa Knp Kk...?? Yeahh~</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://i.pinimg.com/736x/df/46/f0/df46f0e20c9a01e249b58bff6ca63b1c.jpg" alt="user">
+        <div class="text">
+          <h3>OHyul Kiyowo^^</h3>
+          <p>aku beli dompet ga dibonusin uangnya kak? T.T</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://i.pinimg.com/736x/73/7d/01/737d018601dd99d88a5f2a0915c3f1d8.jpg" alt="user">
+        <div class="text">
+          <h3>Louis suka Roblox</h3>
+          <p>Kualitas produknya baik, sellernya baik, harganya baik, ibu saya baik, bapak saya baik, adik saya baik, kakek nenek saya baik juga, teman saya baik, tetangga saya baik, mantan saya aja yang jahat</p>
+        </div>
+      </div>
+
+      <div class="testimonial-card">
+        <img src="https://i.pinimg.com/736x/63/04/d3/6304d3643ea1a4b3763cd5bb251a6d2f.jpg" alt="user">
+        <div class="text">
+          <h3>Woojin W0o0W</h3>
+          <p>lumayan bagus,tapi agak nyesal belinya. mau tau kenapa?? lanjut part 2</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container">
+    <p>Copyright © 2026 - DWL Nayla Artika Dwi Kesya</p>
+  </div>
+</footer>
+
+
+<!-- ================= MODAL ================= -->
+<div id="modal-alert" class="modal-backdrop hidden">
+            <div class="modal-content">
+                <h3>Selamat Datang !!</h3>
+                <button id="tombol-tutup">Tutup</button>
+            </div>
+    </div>
+
+    <div id="popup-media" class="modal-backdrop hidden">
+        <div class="modal-content">
+            <span id="tutup-popup">&times;</span>
+            <img id="popup-gambar" src="" alt="popup" style="display:none;">
+            <p id="popup-caption" style="display:none;"></p>
+        </div>
+    </div>
+
+    <script src="script3.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
